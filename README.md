@@ -8,6 +8,7 @@ A JavaScript project boilerplate scaffolding tool to start building a JavaScript
 Run ```js-module``` in a directory where you'd like to start a new JavaScript module.
 
 ## Release History
+* 1.0.2: update generator tool.
 * 1.0.1: update documentation.
 * 1.0.0: Initial release.
 
