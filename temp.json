@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-newer": "^1.1.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "author": "Ryan Burgess <rburgess@evernote.com> (http://everernote.com/)",
+  "license": "MIT"
+}

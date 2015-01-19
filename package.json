@@ -1,0 +1,48 @@
+{
+  "name": "js-module",
+  "version": "1.0.0",
+  "description": "A JavaScript project boilerplate scaffolding tool to start building a JavaScript module.",
+  "main": "bin/js-module",
+  "preferGlobal": true,
+  "bin": {
+    "js-module": "./bin/js-module"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanburgess/js-module.git"
+  },
+  "keywords": [
+    "javascript",
+    "module",
+    "js",
+    "nodejs",
+    "node",
+    "modules",
+    "generator",
+    "tool",
+    "boilerplate",
+    "scaffolding"
+  ],
+  "dependencies": {
+    "fs": "0.0.2",
+    "mkdirp": "^0.5.0",
+    "path": "^0.11.14"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-newer": "^1.1.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "author": "Ryan Burgess <rburgess@evernote.com> (http://everernote.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanburgess/js-module/issues"
+  },
+  "homepage": "https://github.com/ryanburgess/js-module"
+}
