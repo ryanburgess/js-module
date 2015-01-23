@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         indent: 2,
         quotmark: 'single',
         unused: false,
-        ignores: [''],
+        ignores: ['node_modules/**/*.js'],
         globals: {
           jQuery: true
         },
