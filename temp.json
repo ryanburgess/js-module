@@ -11,6 +11,8 @@
     "url": "https://github.com/ryanburgess/js-module.git"
   },
   "keywords": [
+    "module",
+    "javascript"
   ],
   "dependencies": {
   },
@@ -22,7 +24,7 @@
     "grunt-newer": "^1.1.0",
     "jshint-stylish": "^1.0.0"
   },
-  "author": "Ryan Burgess <rburgess@evernote.com> (http://everernote.com/)",
+  "author": "Ryan Burgess",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryanburgess/js-module/issues"
