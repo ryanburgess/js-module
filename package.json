@@ -1,6 +1,6 @@
 {
   "name": "js-module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A JavaScript project boilerplate scaffolding tool to start building a JavaScript module.",
   "main": "bin/js-module",
   "preferGlobal": true,
@@ -39,7 +39,7 @@
     "grunt-newer": "^1.1.0",
     "jshint-stylish": "^1.0.0"
   },
-  "author": "Ryan Burgess <rburgess@evernote.com> (http://everernote.com/)",
+  "author": "Ryan Burgess @burgessdryan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryanburgess/js-module/issues"

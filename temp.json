@@ -24,7 +24,7 @@
     "grunt-newer": "^1.1.0",
     "jshint-stylish": "^1.0.0"
   },
-  "author": "Ryan Burgess",
+  "author": "Ryan Burgess @burgessdryan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryanburgess/js-module/issues"

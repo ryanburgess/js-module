@@ -8,6 +8,7 @@ A JavaScript project boilerplate scaffolding tool to start building a JavaScript
 Run ```js-module``` in a directory where you'd like to start a new JavaScript module.
 
 ## Release History
+* 1.0.6: Add license info to default readme.
 * 1.0.5: Add semicolon to default module.
 * 1.0.4: Small updates to documentation and generated readme.
 * 1.0.3: Grunt JSHint ignore node_modules directory.
@@ -23,3 +24,6 @@ Run ```js-module``` in a directory where you'd like to start a new JavaScript mo
 5. Commit your changes (`git commit -am "Add some feature"`)
 6. Push to the branch (`git push origin my-new-feature`)
 7. Create new Pull Request
+
+## License
+'MIT © [Ryan Burgess](http://github.com/ryanburgess)
