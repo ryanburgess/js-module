@@ -8,6 +8,7 @@ A JavaScript project boilerplate scaffolding tool to start building a JavaScript
 Run ```js-module``` in a directory where you'd like to start a new JavaScript module.
 
 ## Release History
+* 1.0.5: Add semicolon to default module.
 * 1.0.4: Small updates to documentation and generated readme.
 * 1.0.3: Grunt JSHint ignore node_modules directory.
 * 1.0.2: update generator tool.

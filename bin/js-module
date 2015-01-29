@@ -7,7 +7,7 @@ var mkdirp    = require('mkdirp'),
   version     = pkg.version,
   dir         = path.dirname(),
   readme      = 'JS Module'+ '\n' +'============='+ '\n \n',
-  indexJS     = 'module.exports = function(){'+ '\n' + '}',
+  indexJS     = 'module.exports = function(){'+ '\n' + '};',
   gitignore   = '.DS_Store'+ '\n' + '~*'+ '\n' + '*.bak'+ '\n' + '*.tmp'+ '\n' + '.sass-cache'+ '\n' + '*.log'+ '\n' + 'node_modules/';
 
 readme += '## Install'+ '\n' +
