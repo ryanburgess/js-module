@@ -7,7 +7,7 @@ var mkdirp    = require('mkdirp'),
   version     = pkg.version,
   dir         = path.dirname(),
   readme      = 'JS Module'+ '\n' +'============='+ '\n \n',
-  indexJS     = 'module.exports = function(){'+ '\n' + '};',
+  indexJS     = 'module.exports = function(){'+ '\n  \'use strict\';'+ '\n' + '};',
   gitignore   = '.DS_Store'+ '\n' + '~*'+ '\n' + '*.bak'+ '\n' + '*.tmp'+ '\n' + '.sass-cache'+ '\n' + '*.log'+ '\n' + 'node_modules/';
 
 readme += '## Install'+ '\n' +
@@ -32,7 +32,6 @@ readme += '## Contributing'+ '\n' +
 '6. Push to the branch (`git push origin my-new-feature`)'+ '\n' +
 '7. Create new Pull Request';
 
-## License
 readme += '## License'+ '\n' +
 'MIT © [Ryan Burgess](http://github.com/ryanburgess)';
 
