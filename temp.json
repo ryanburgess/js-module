@@ -1,14 +1,14 @@
 {
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "{{package}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "main": "{{main}}",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryanburgess/js-module.git"
+    "url": "https://github.com/{{github}}/{{package}}.git"
   },
   "keywords": [
     "module",
@@ -17,17 +17,11 @@
   "dependencies": {
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-jsonlint": "^1.0.4",
-    "grunt-newer": "^1.1.0",
-    "jshint-stylish": "^1.0.0"
   },
-  "author": "Ryan Burgess @burgessdryan",
-  "license": "MIT",
+  "author": "{{author}}",
+  "license": "{{license}}",
   "bugs": {
-    "url": "https://github.com/ryanburgess/js-module/issues"
+    "url": "https://github.com/{{github}}/{{package}}/issues"
   },
-  "homepage": "https://github.com/ryanburgess/js-module"
+  "homepage": "https://github.com/{{github}}/{{package}}"
 }

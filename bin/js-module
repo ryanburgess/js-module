@@ -1,70 +1,95 @@
 #!/usr/bin/env node
 
-var mkdirp    = require('mkdirp'),
-  fs          = require('fs'),
-  path        = require('path'),
-  pkg         = require('../package.json'),
-  version     = pkg.version,
-  dir         = path.dirname(),
-  readme      = 'JS Module'+ '\n' +'============='+ '\n \n',
-  indexJS     = 'module.exports = function(){'+ '\n  \'use strict\';'+ '\n' + '};',
-  gitignore   = '.DS_Store'+ '\n' + '~*'+ '\n' + '*.bak'+ '\n' + '*.tmp'+ '\n' + '.sass-cache'+ '\n' + '*.log'+ '\n' + 'node_modules/';
+var mkdirp      = require('mkdirp'),
+  fs            = require('fs'),
+  path          = require('path'),
+  prompt        = require('prompt'),
+  pkg           = require('../package.json'),
+  version       = pkg.version,
+  dir           = path.dirname(),
+  packageName   = '',
+  readme        = '',
+  indexJS       = '',
+  name          = '',
+  version       = '',
+  description   = '',
+  github        = '',
+  author        = '',
+  main          = '',
+  license       = '',
+  gitignore     = '';
 
-readme += '## Install'+ '\n' +
-'```js'+ '\n' +
-'npm install js-module --save-dev'+ '\n' +
-'```'+ '\n';
+prompt.start();
 
-readme += '## Use'+ '\n' +
-'```js'+ '\n' +
-'var module = require(\'js-module\');'+ '\n' +
-'```'+ '\n';
+prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'license'], function (err, result) {
 
-readme += '## Release History'+ '\n' +
-'* 1.0.0: Initial release.'+ '\n \n';
+  name = result.name;
+  version = result.version;
+  description = result.description;
+  main = result.main;
+  github = result.github;
+  author = result.author;
+  license = result.license;
 
-readme += '## Contributing'+ '\n' +
-'1. Fork it'+ '\n' +
-'2. Run `npm install`'+ '\n' +
-'3. Run Grunt watch `grunt watch`'+ '\n' +
-'4. Create your feature branch (`git checkout -b my-new-feature`)'+ '\n' +
-'5. Commit your changes (`git commit -am "Add some feature"`)'+ '\n' +
-'6. Push to the branch (`git push origin my-new-feature`)'+ '\n' +
-'7. Create new Pull Request';
+  packageName = name.replace(/\s+/g, '-').toLowerCase();
 
-readme += '## License'+ '\n' +
-'MIT © [Ryan Burgess](http://github.com/ryanburgess)';
-
-write(dir + '/README.md', readme);
-write(dir + '/.gitignore', gitignore);
-write(dir + '/index.js', indexJS);
-
-// create Gruntfile
-fs.readFile(path.join(__dirname, '../Gruntfile.js'), 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
+  if(main === ''){
+    main = 'index.js';
   }
-  write(dir + '/Gruntfile.js', data);
-});
 
-// create package.json
-fs.readFile(path.join(__dirname, '../temp.json'), 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
+  if(license === ''){
+    license = 'MIT';
   }
-  write(dir + '/package.json', data);
-});
 
-function write(path, str, mode) {
-  fs.writeFileSync(path, str, { mode: mode || 0666 });
-  console.log('   \x1b[36mcreate\x1b[0m : ' + path);
-}
-function mkdir(path, fn) {
-  mkdirp(path, 0755, function(err){
-    if (err) throw err;
-    console.log('   \033[36mcreate\033[0m : ' + path);
-    fn && fn();
+  indexJS = 'module.exports = function(){'+ '\n  \'use strict\';'+ '\n' + '};';
+  gitignore = '.DS_Store'+ '\n' + '~*'+ '\n' + '*.bak'+ '\n' + '*.tmp'+ '\n' + '.sass-cache'+ '\n' + '*.log'+ '\n' + 'node_modules/';
+  
+  write(dir + '/.gitignore', gitignore);
+  write(dir + '/index.js', indexJS);
+
+  // create package.json
+  fs.readFile(path.join(__dirname, '../temp.json'), 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    data = data.replace(/\{{package}}/g, packageName)
+    .replace(/\{{description}}/g, description)
+    .replace(/\{{version}}/g, version)
+    .replace(/\{{main}}/g, main)
+    .replace(/\{{github}}/g, github)
+    .replace(/\{{author}}/g, author)
+    .replace(/\{{license}}/g, license);
+
+    write(dir + '/package.json', data);
   });
-}
 
-console.log('JS Module ' + version);
+  // create readme
+  fs.readFile(path.join(__dirname, '../temp-readme.md'), 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    data = data.replace(/\{{package}}/g, packageName)
+    .replace(/\{{name}}/g, name)
+    .replace(/\{{description}}/g, description)
+    .replace(/\{{version}}/g, version)
+    .replace(/\{{main}}/g, main)
+    .replace(/\{{github}}/g, github)
+    .replace(/\{{author}}/g, author)
+    .replace(/\{{license}}/g, license);
+    write(dir + '/README.md', data);
+  });
+
+  function write(path, str, mode) {
+    fs.writeFileSync(path, str, { mode: mode || 0666 });
+    console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+  }
+  function mkdir(path, fn) {
+    mkdirp(path, 0755, function(err){
+      if (err) throw err;
+      console.log('   \033[36mcreate\033[0m : ' + path);
+      fn && fn();
+    });
+  }
+
+  console.log('JS Module ' + version);
+});
