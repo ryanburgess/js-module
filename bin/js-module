@@ -19,6 +19,8 @@ var mkdirp      = require('mkdirp'),
   license       = '',
   gitignore     = '';
 
+prompt.message = 'JS Module'.magenta;
+prompt.delimiter = ' ';
 prompt.start();
 
 prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'license'], function (err, result) {

@@ -1,6 +1,6 @@
 {
   "name": "js-module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A JavaScript project boilerplate scaffolding tool to start building a JavaScript module.",
   "main": "bin/js-module",
   "preferGlobal": true,
