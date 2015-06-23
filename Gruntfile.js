@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      all: ['**/*.js'],
+      all: ['**/*.js', 'bin/*'],
       options: {
         reporter: require('jshint-stylish'),
         curly: true,
@@ -21,19 +21,19 @@ module.exports = function(grunt) {
     },
     jsonlint: {
       sample: {
-        src: [ '**/*.json' ]
+        src: ['package.json', 'temp.json']
       }
     },
     watch: {
       scripts: {
-        files: ['**/*.js'],
+        files: ['**/*.js', 'bin/*'],
         tasks: ['jshint'],
         options: {
           livereload: true
         }
       },
       json: {
-        files: ['**/*.json'],
+        files: ['package.json', 'temp.json'],
         tasks: ['newer:jsonlint'],
         options: {
           spawn: false
@@ -44,5 +44,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jsonlint');
+  grunt.registerTask('test',['jshint', 'jsonlint']);
   grunt.registerTask('default',['watch']);
 };

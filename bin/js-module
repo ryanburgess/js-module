@@ -10,7 +10,7 @@ var mkdirp      = require('mkdirp'),
   packageName   = '',
   readme        = '',
   indexJS       = '',
-  name          = '',
+  moduleName    = '',
   version       = '',
   description   = '',
   github        = '',
@@ -23,9 +23,9 @@ prompt.message = 'JS Module'.magenta;
 prompt.delimiter = ' ';
 prompt.start();
 
-prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'license'], function (err, result) {
+prompt.get(['module name', 'version', 'description', 'main file', 'github', 'author', 'license'], function (err, result) {
 
-  name = result.name;
+  moduleName = result.name;
   version = result.version;
   description = result.description;
   main = result.main;
@@ -33,7 +33,7 @@ prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'licen
   author = result.author;
   license = result.license;
 
-  packageName = name.replace(/\s+/g, '-').toLowerCase();
+  packageName = moduleName.replace(/\s+/g, '-').toLowerCase();
 
   if(main === ''){
     main = 'index.js';
@@ -71,7 +71,7 @@ prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'licen
       return console.log(err);
     }
     data = data.replace(/\{{package}}/g, packageName)
-    .replace(/\{{name}}/g, name)
+    .replace(/\{{name}}/g, moduleName)
     .replace(/\{{description}}/g, description)
     .replace(/\{{version}}/g, version)
     .replace(/\{{main}}/g, main)
@@ -87,9 +87,11 @@ prompt.get(['name', 'version', 'description', 'main', 'github', 'author', 'licen
   }
   function mkdir(path, fn) {
     mkdirp(path, 0755, function(err){
-      if (err) throw err;
+      if (err) {
+        return err;
+      }
       console.log('   \033[36mcreate\033[0m : ' + path);
-      fn && fn();
+      return fn && fn();
     });
   }
 

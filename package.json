@@ -1,6 +1,6 @@
 {
   "name": "js-module",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A JavaScript project boilerplate scaffolding tool to start building a JavaScript module.",
   "main": "bin/js-module",
   "preferGlobal": true,
@@ -8,7 +8,7 @@
     "js-module": "./bin/js-module"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
